@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#box{
+    margin: 50px auto;
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    background: #6b88fe;
+    border: 5px solid black;
+    padding: 150px 400px;
+    box-sizing: border-box;
+}
+#person{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 5;
+    background: url(images/yasuoleft.png);
+}
+#brick{/*砖块*/
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url(images/brick.png);
+}
+#whiteBrick{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+#specialBrick{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url(images/specialBrick.png);
+}
+#questionBrick{/*问号砖块*/
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url(images/questionBrick.png);
+}
+#stone{/*石头*/
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url(images/stone.png);
+}
+#floor{/*地面*/
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: url(images/floor.png);
+}
+#pipeShort{/*短管道*/
+    position: absolute;
+    background: url(images/pipeShort.png);
+}
+#pipeLong{/*长管道*/
+    position: absolute;
+    background: url(images/pipeLong.png);
+}
+#enemy{/*敌人*/
+    position: absolute;
+    background: url(images/enemyRight.gif);
+}
+#dropBrick{/*下降的墙*/
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    background: url(images/dropBrick.png);
+}
+#cannon{/*炮筒*/
+    position: absolute;
+    background: url(images/cannon.png);
+    z-index: 3;
+}
+#bomb{/*炮弹*/
+    position: absolute;
+    background: url(images/bomb.png);
+    z-index: 2;
+}
+#fire{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(images/fire.png);
+    border-radius: 50%;
+    z-index: 5;
+}
+#on-off{
+    position: absolute;
+    background: url(images/off.png);
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+#weapon{
+    position: absolute;
+}
+#sign{
+    position: absolute;
+    background: url(images/sign.png);
+}
+#dropEnemy{
+    position: absolute;
+}
+.JPanel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(images/bg.png);
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    display: block;
+    z-index: 6;
+}
+button{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 20px 0;
+    border-radius: 5px;
+    background: rgb(23, 94, 134);
+    font-size: 20px;
+    z-index: 999;
+}
+button:hover{
+    color: rgb(204, 204, 240);
+    cursor: pointer;
+}
+.explain{
+    width: 400px;
+    height: 220px;
+    position: absolute;
+    left: 300px;
+    top: 150px;
+    background: url(images/explain.png);
+    display: none;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 0;
+}
+input{
+    display: none;
+}
+.explainClose{
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    user-select:none;
+    background: rgb(6, 143, 223);
+    border-radius: 5px;
+    z-index: 1001;
+    position: absolute;
+    left: 300px;
+    top: 150px;
+    border: 1px solid black;
+    display: none;
+    font-size: 35px;
+}
+.explainClose:hover{
+    color: rgb(209, 14, 14);
+}

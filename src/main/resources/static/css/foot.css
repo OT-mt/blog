@@ -1,0 +1,24 @@
+footer{
+    width: 100%;
+    min-height: 150px;
+    background: #373D41;
+    border-top: #00C1DE 10px solid;
+    color: #73777a;
+    overflow: auto;
+}
+.foot-box{
+    margin-top: 20px;
+}
+.foot-box>div{
+    float: left;
+    margin-right: 20px;
+}
+.foot-box img{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.foot-box span{
+    display: block;
+    text-align: center;
+}

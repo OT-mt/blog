@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: #efefef;
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+/*正常的未被访问过的链接*/
+a:link {
+    text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+    text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+    text-decoration: none!important;
+}
+/* 正在点击的链接*/
+a:active {
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.box-wid{
+    width: 1200px;
+    margin: 0 auto;
+}
+.hover-big:hover{
+    transform: scale(1.2);
+}
+/*七彩头部*/
+.colours{
+    width: 100%;
+    height: 20px;
+    z-index: 999;
+    background-color: red; /* 浏览器不支持的时候显示 */
+    background-image: linear-gradient(30deg,#FF0800 10%, #FFB914 20%, yellow 30%,
+    green 40%,#25FFAE 50%,blue 60%,#E700FF 70%,black 80%,white 90%);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员</title>
+    <script th:src="@{/static/js/jquery.js}"></script>
+</head>
+<body>
+账号：<input id="account" type="text"><br>
+密码：<input id="password" type="password"><br>
+<div id="submit" style="width: 200px;height: 30px;background: black;color:#fff;cursor: pointer;text-align: center">提交</div>
+<script>
+    $(function(){
+        var url = window.location.protocol+'//'+window.location.hostname+
+            ':'+window.location.port+'/'+window.location.pathname.split('/')[1]+'/';
+        $("#submit").click(function () {
+            $.ajax({
+                url:url+"admin/addCookie",
+                method: "post",
+                dataType: "json",
+                contentType:'application/json;charset=utf-8',
+                data:JSON.stringify({"account":$("#account").val(),"password":$("#password").val()}),
+                success:function (data) {
+                    if (data.account!==null){
+                        alert("登陆成功");
+                    }
+                    else{
+                        alert("账号或密码错误")
+                    }
+                },
+                error:function () {
+                    alert("账号或密码错误")
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

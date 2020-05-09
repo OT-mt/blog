@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <link rel="stylesheet" href="static/css/common.css"/>
+    <link rel="stylesheet" href="static/css/foot.css">
+    <link rel="stylesheet" href="static/css/register.css">
+
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/rergister.js"></script>
+</head>
+<body style="overflow: hidden">
+    <header class="colours"></header>
+    <div class="box-wid box" style="background: #fff">
+        <form method="post" id="form">
+            <ul class="list">
+                <li id="forName">
+                    <label for="name" class="value" >
+                        <input id="name" class="check-input" name="name" type="text" placeholder="昵称">
+                    </label>
+                    <div>
+                        <img src="static/imgs/error.png"></img>
+                        <span class="error"></span>
+                    </div>
+                </li>
+                <li id="forPassword">
+                    <label for="password" class="value" >
+                        <input id="password" class="check-input" name="password" type="password" placeholder="密码">
+                    </label>
+                    <div>
+                        <img src="static/imgs/error.png"></img>
+                        <span class="error"></span>
+                    </div>
+                </li>
+                <li id="forMail">
+                    <label for="mail" class="value" >
+                        <input id="mail" class="check-input" name="mail" type="email" placeholder="邮箱">
+                    </label>
+                    <div>
+                        <img src="static/imgs/error.png"></img>
+                        <span class="error"></span>
+                    </div>
+                </li>
+                <li id="forCode">
+                    <label for="code" class="value">
+                        <input id="code" class="check-input" name="code" type="text" placeholder="验证码">
+                        <div id="getCode" class="button">获取验证码</div>
+                    </label>
+                    <div>
+                        <img src="static/imgs/error.png"></img>
+                        <span class="error"></span>
+                    </div>
+                </li>
+                <div id="register" class="button">提交</div>
+            </ul>
+        </form>
+    </div>
+    <footer>
+        <div class="box-wid foot-box">
+            <div class="qq-box">
+                <img src="static//imgs/qq.jpg">
+                <span>QQ</span>
+            </div>
+            <div class="wechat-box">
+                <img src="static//imgs/wechat.jpg">
+                <span>微信</span>
+            </div>
+            <div class="foot-mes">
+                <h5>本站声明</h5>
+                <div>本站由作者一手创建，可以转载需注明出处，不可用作商用，违法必究</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

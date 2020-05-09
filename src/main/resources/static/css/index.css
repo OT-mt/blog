@@ -1,0 +1,239 @@
+body{
+    background-color: #efefef;
+}
+body,html{
+    cursor: url('../imgs/1.jpg'),auto;
+}
+.box{
+    min-height: 1000px;
+    margin-top: 70px;
+    padding-top: 20px;
+    overflow: auto;
+}
+.box>div>div{
+    border-radius: 5px;
+    overflow: hidden;
+}
+#carouselExampleIndicators img{
+    width: 900px;
+    height: 400px;
+}
+.lbox{
+    float: left;
+    width: 900px;
+}
+.card>img{
+    width: 900px;
+    height: 400px;
+}
+.lbox>div{
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+.entrance{
+    display: flex;
+}
+.img-box{
+    width: 97%;
+    height: 100%;
+    border-radius: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+}
+.img-box img{
+    width: 217px;
+    height: 200px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.rbox{
+    float: right;
+    width: 280px;
+}
+.rbox>div{
+    width: 100%;
+}
+.author{
+    margin-bottom: 20px;
+}
+.profile{
+    background: #3ebcd9;
+    height: 90px;
+}
+.profile-box{
+    margin: 0 auto;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    top: 70%;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #fff;
+}
+.profile-box img{
+    width: 80%;
+    margin: 10%;
+    height: 80%;
+    border-radius: 50%;
+}
+.author-mes{
+    height: 100px;
+    background-color: #ffffff;
+    padding-top: 40px;
+}
+
+.nick-name{
+    text-align: center;
+    font-weight: 500;
+}
+.intro{
+    text-align: center;
+    color: #bdc0ba;
+    font-weight: 100;
+}
+.contact{
+    background: #7abaff;
+    height: 60px;
+}
+.hots-blog{
+
+}
+
+#wheather{
+    min-height: 630px;
+    overflow-y: auto;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+.wh5-f-row{
+    display: none !important;
+}
+.blog{
+    width: 88%;
+    height: 120px;
+    overflow: hidden;
+    background: white;
+    border-bottom: solid 1px rgba(49, 55, 50, 0.1);
+    margin: 10px 0;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.blog:hover .blog-title{
+    color: #9fcdff;
+}
+.blog-text{
+    font-size: 13px;
+    color: gray;
+    height: 60%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    TEXT-overflow: ellipsis;
+}
+.blog-text>*{
+    font-size: 13px !important;
+    color: gray;
+    font-weight: normal !important;
+    display: inline;
+}
+a .blog-text:hover{
+    text-decoration: none;
+}
+.blog-title{
+    font-weight: bold;
+    color: black;
+}
+.blog-type{
+    float: right;
+    font-size: 15px;
+    color: #36fee2;
+}
+h5{
+    display: inline-block;
+    font-weight: bold!important;
+}
+.me{
+    width: 100px;
+    float: left;
+    height: 100%;
+    font-size: 15px;
+    color: gray;
+    text-align: center;
+}
+.me img{
+    width: 73px;
+    height: 73px;
+}
+.time{
+    text-align: center;
+}
+#getBlog{
+    margin-top: -20px;
+    background: white;
+}
+.contact-mes{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    float: left;
+    text-align: center;
+    background: #a143ff;
+    border-radius: 50%;
+    color: white;
+    line-height: 45px;
+    cursor: pointer;
+}
+.contact-mes:hover > div{
+    display: block;
+}
+.contact-mes>div{
+    display: none;
+}
+.contact-mes img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+#login{
+    color:white ;
+    float: right;
+    cursor: pointer;
+}
+#confirmLogin{
+    width: 100px;
+    height: 30px;
+    background: #0ac9de;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+.modal span{
+    display: inline-block;
+    width: 70px;
+}
+.modal li{
+    margin-bottom: 10px;
+}
+#wheather{
+    overflow-y: auto;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(#41b8e1,#f1e7e7);
+    padding: 5px;
+    color: aliceblue;
+    min-height: 20px!important;
+}
+#wheather li{
+    float: left;
+    width: 33.3%;
+
+}

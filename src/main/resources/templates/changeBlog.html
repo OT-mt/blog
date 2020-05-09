@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>写博客</title>
+    <link rel="stylesheet" th:href="@{/static/lib/editormd/examples/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/static/lib/editormd/css/editormd.css}" />
+    <link rel="shortcut icon" th:href="@{/static/imgs/icon.png}" type="image/x-icon" />
+    <link rel="stylesheet" th:href="@{/static/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/static/css/foot.css}">
+    <link rel="stylesheet" th:href="@{/static/css/writeBlog.css}">
+
+</head>
+<body style="background: #efefef;">
+<header class="colours"  ></header>
+<div id="id" th:text="${blog.id}" style="display: none" ></div>
+<div id="selectType" th:text="${blog.type}" style="display: none" ></div>
+<div id="layout">
+    <form action="" method="post">
+        <div class="title-box">
+            <input class="title" name="title" th:value="${blog.title}">
+            <select id="type" th:value="${blog.type}">
+            </select>
+        </div>
+        <div id="test-editormd">
+                <textarea style="display:none;" th:text="${blog.text_mark}">
+                </textarea>
+        </div>
+        <br/><div id="submit" class="btn">提交</div>
+    </form>
+</div>
+<footer>
+    <div class="box-wid foot-box">
+        <div class="qq-box">
+            <img th:src="@{/static/imgs/qq.jpg}">
+            <span>QQ</span>
+        </div>
+        <div class="wechat-box">
+            <img th:src="@{/static/imgs/wechat.jpg}">
+            <span>微信</span>
+        </div>
+        <div class="foot-mes">
+            <h5>本站声明</h5>
+            <div>本站由作者一手创建，可以转载需注明出处，不可用作商用，违法必究</div>
+        </div>
+    </div>
+</footer>
+<script th:src="@{/static/lib/editormd/examples/js/zepto.min.js}"></script>
+<script th:src="@{/static/lib/editormd/editormd.js}"></script>
+<script type="text/javascript">
+    // 改变类型
+    $("#type").val();
+
+    var testEditor;
+    var jQuery = Zepto;  // 为了避免修改 flowChart.js 和 sequence-diagram.js 的源码，所以想支持 flowChart / sequenceDiagram 就得加上这一句
+
+    $(function() {
+
+        var url = window.location.protocol+'//'+window.location.hostname+
+            ':'+window.location.port+'/'+window.location.pathname.split('/')[1]+'/';
+
+        $.ajax({
+            url: url + "blog/getAllColumn",
+            type: "get",
+            dataType: "json",
+            contentType: 'application/json;charset=utf-8',
+            success: function (data) {
+                $.each(data,function (index,obj) {
+                    if (obj.value!==$("#selectType").text()){
+                        $("#type").append(
+                            "<option value=\""+obj.value+"\">"+obj.value+"</option>"
+                        )
+                    }else {
+                        $("#type").append(
+                            "<option value=\""+obj.value+"\" selected='selected'>"+obj.value+"</option>"
+                        )
+                    }
+
+                });
+            }
+        });
+
+
+        testEditor = editormd("test-editormd", {
+            width  : "90%",
+            height : 720,
+            toc : true,
+
+            emoji : true,       // Support Github emoji, Twitter Emoji(Twemoji), fontAwesome, Editor.md logo emojis.
+
+            taskList : true,
+            path   : url+'static/lib/editormd/lib/'
+        });
+
+        $("#get-md-btn").bind('click', function(){
+            alert(testEditor.getMarkdown());
+            var array = $(".markdown-body>*");
+            var text = "";
+            for (let i = 0; i < array.length; i++) {
+                text += array.eq(i).text();
+            }
+            $(".foot-mes").html(text);
+        });
+
+        $("#get-html-btn").bind('click', function() {
+            alert(testEditor.getHTML());
+            console.log(testEditor.getHTML());
+            $("header").append(testEditor.getHTML());
+        });
+        // 得到markdown
+        // testEditor.getMarkdown();
+        // // 得到 html
+        // testEditor.getHTML();
+        // 得到正常文本
+        function $text() {
+            var array = $(".markdown-body>*");
+            var text = "";
+            for (let i = 0; i < array.length; i++) {
+                text += array.eq(i).text();
+            }
+            return text;
+        }
+
+        $("#submit").click(function () {
+            console.log($(".title").val())
+            $.ajax({
+                url:url+"admin/changeBlog",
+                method:"post",
+                type: "post",
+                contentType:'application/json;charset=utf-8',
+                dataType:"text",
+                data:JSON.stringify({
+                    id:$("#id").text(),
+                    type:$("#type").val(),
+                    title:$(".title").val(),
+                    text:$text(),
+                    text_mark:testEditor.getMarkdown(),
+                    text_html:'123'
+                }),
+                success:function () {
+                    alert("更改成功");
+                    window.location.href = url+"index";
+                },
+                error:function () {
+                    alert("失败，请稍后重试");
+                }
+            })
+        })
+    });
+
+</script>
+</body>
+</html>

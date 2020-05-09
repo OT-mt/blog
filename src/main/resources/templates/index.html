@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="Shortcut Icon" href="static/imgs/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/common.css"/>
+    <link rel="stylesheet" href="static/css/index.css"/>
+    <link rel="stylesheet" href="static/css/head.css"/>
+    <link rel="stylesheet" href="static/css/foot.css"/>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+
+    <script src="static/js/jquery.js"></script>
+    <script src="static/bootstrap/js/bootstrap.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+<body style="background: #efefef;">
+    <div class="head">
+        <header>
+            <div class="box-wid head-box">
+                <div class="icon">
+                    <img src="static/imgs/icon.png" alt="网络拥挤请刷新">
+                </div>
+                <div class="head-nav">
+                    <ul class="fir-nav">
+                        <li id="active"><a>首页</a></li>
+                        <li>
+                            <a>学习资料</a>
+                            <ul class="sec-nav">
+                                <li>Java</li>
+                                <li>前端</li>
+                                <li>Linux</li>
+                                <li>spring</li>
+                            </ul>
+                        </li>
+                        <li><a>商业合作</a></li>
+                        <li id="profile"><a>个人空间</a></li>
+                        <li id="blognav"><a>博客展示</a></li>
+                        <li id="writeBlog"><a>写博客</a></li>
+                        <li><a>项目展示</a></li>
+                    </ul>
+                </div>
+                <!-- 登录同时控制模态框-->
+                <div id="login">
+                    登录
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="box-wid box">
+        <img id="gif1" src="static/imgs/gif/ez.gif" style="width: 285px;position: absolute;left: -35px;top: 17px">
+        <div class="lbox">
+            <!--幻灯片  -->
+            <div id="carouselExampleIndicators" class="carousel slide card" data-ride="carousel" style="width: 900px;height: 400px">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="static/imgs/5.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/imgs/6.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/imgs/7.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!--幻灯片  -->
+            <div class="entrance">
+                <div class="img-box" title="点击进入主页" style="margin-right: 10px" href="index.html">
+                    <a href="index.html">
+                        <img class="hover-big" href="index.html" src="static/imgs/2.jpg">
+                    </a>
+                </div>
+                <div class="img-box" title="超级玛丽" style="margin-right: 10px">
+                    <a href="static/project/supermali/index.html">
+                        <img class="hover-big" src="static/imgs/project/supermali.jpg">
+                    </a>
+                </div>
+                <div class="img-box" title="王者荣耀" style="margin-right: 10px">
+                    <a href="static/project/wangzherongyao/index.html">
+                        <img class="hover-big" src="static/imgs/project/wzry.jpg">
+                    </a>
+                </div>
+                <div class="img-box" title="古剑奇谭">
+                    <a href="static/project/gujianqitan/index.html">
+                        <img class="hover-big" src="static/imgs/project/gjqt.jpg">
+                    </a>
+                </div>
+            </div>
+            <div id="blogs" style="width: 100%;min-height: 500px;background: white">
+                <h5 style="    font-size: 14px; margin: 5px;">个人博客</h5>
+            </div>
+            <div id="getBlog" style="text-align: center;color: gray;cursor: pointer">下拉加载内容</div>
+        </div>
+        <div class="rbox">
+            <div class="author">
+                <div class="profile">
+                    <div class="profile-box">
+                        <img src="static/imgs/p.png">
+                    </div>
+                </div>
+                <div class="author-mes">
+                    <div class="nick-name">王雪浩</div>
+                    <div class="intro">在校大学生</div>
+                </div>
+                <div class="contact">
+                    <div class="contact-mes">
+                        <span>QQ</span>
+                        <div><img src="static/imgs/qq.jpg"></div>
+                    </div>
+                    <div class="contact-mes">
+                        <span>微信</span>
+                        <div><img src="static/imgs/wechat.jpg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hots-blog" >
+            </div>
+            <div id="wheather">
+                <div id="city">洛阳</div>
+                <ul>
+                    <li>
+                        <h5>今天</h5>
+                        <div>
+                            <span class="date">
+                                2020-05-05
+                            </span>
+                        </div>
+                        <div>
+                            <span class="cond_txt_d">多云</span>
+                        </div>
+                        <div>
+                            <span class="tmp_max">44.1</span>
+                            <span style="font-size: 13px">℃</span>
+                            <span>~</span>
+                            <span class="tmp_min">20.2</span>
+                            <span style="font-size: 13px">℃</span>
+                        </div>
+                        <div>
+                            <span class="wind_dir">东风</span>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>明天</h5>
+                        <div>
+                            <span class="date">
+                                2020-05-05
+                            </span>
+                        </div>
+                        <div>
+                            <span class="cond_txt_d">多云</span>
+                        </div>
+                        <div>
+                            <span class="tmp_max">44.1</span>
+                            <span style="font-size: 13px">℃</span>
+                            <span>~</span>
+                            <span class="tmp_min">20.2</span>
+                            <span style="font-size: 13px">℃</span>
+                        </div>
+                        <div>
+                            <span class="wind_dir">东风</span>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>后天</h5>
+                        <div>
+                            <span class="date">
+                                2020-05-05
+                            </span>
+                        </div>
+                        <div>
+                            <span class="cond_txt_d">多云</span>
+                        </div>
+                        <div>
+                            <span class="tmp_max">44.1</span>
+                            <span style="font-size: 13px">℃</span>
+                            <span>~</span>
+                            <span class="tmp_min">20.2</span>
+                            <span style="font-size: 13px">℃</span>
+                        </div>
+                        <div>
+                            <span class="wind_dir">东风</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="box-wid foot-box">
+            <div class="qq-box">
+                <img src="static/imgs/qq.jpg">
+                <span>QQ</span>
+            </div>
+            <div class="wechat-box">
+                <img src="static/imgs/wechat.jpg">
+                <span>微信</span>
+            </div>
+            <div class="foot-mes">
+                <h5>本站声明</h5>
+                <div>本站由作者一手创建，可以转载需注明出处，不可用作商用，违法必究</div>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">登录账号</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <li>
+                        <span>邮箱号：</span>
+                        <input id="mail" type="text">
+                    </li>
+                    <li>
+                        <span>密  码：</span>
+                        <input id="password" type="password">
+                    </li>
+                </div>
+                <div class="modal-footer">
+                    <div id="confirmLogin">登录</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

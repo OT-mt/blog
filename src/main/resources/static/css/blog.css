@@ -1,0 +1,90 @@
+header{
+    width: 100%;
+    height: 20px;
+    background-color: red; /* 浏览器不支持的时候显示 */
+    background-image: linear-gradient(30deg,#FF0800 10%, #FFB914 20%, yellow 30%,
+    green 40%,#25FFAE 50%,blue 60%,#E700FF 70%,black 80%,white 90%);
+}
+.box{
+    min-height: 500px;
+    overflow: auto;
+    position: relative;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-bottom: 100px;
+}
+.box>div{
+    width: 100%;
+}
+.nav{
+    text-align: left;
+}
+.text{
+    padding: 20px;
+    box-sizing: border-box;
+    background: #c2bebe;
+    border-radius: 5px;
+}
+.text h1{
+    text-align: center;
+}
+#value{
+    white-space:normal;
+    word-break:break-all;
+    overflow:hidden;
+}
+.comment{
+    background: #c2bebe;
+    color: #fff;
+    padding: 20px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+.comment-box{
+    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.user{
+    float: left;
+    width: 10%;
+    border-right: #cccccc solid 1px;
+}
+.comment-value{
+    float: left;
+    width: 80%;
+    white-space:normal;
+    word-break:break-all;
+    overflow:hidden;
+    box-sizing: border-box;
+    padding-left: 20px;
+    text-align: left;
+}
+.img-box img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid;
+    margin: 0px;
+}
+.name{
+    color: #955f5f;
+    font-weight: 900;
+}
+#getComment{
+    background: #c2bebe;
+    font-size: 2px;
+    cursor: pointer;
+}
+.delete{
+    width: 40px;
+    position: absolute;
+    right: 0;
+    background: #f8c581;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}

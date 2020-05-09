@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>写博客</title>
+    <link rel="stylesheet" href="static/lib/editormd/examples/css/style.css" />
+    <link rel="stylesheet" href="static/lib/editormd/css/editormd.css" />
+    <link rel="shortcut icon" href="static/imgs/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/common.css"/>
+    <link rel="stylesheet" href="static/css/foot.css">
+    <link rel="stylesheet" href="static/css/writeBlog.css">
+
+</head>
+<body style="background: #efefef;">
+<header class="colours"></header>
+<div id="layout">
+<!--    <div class="btns">-->
+<!--        <button id="get-md-btn">Get Markdown</button>-->
+<!--        <button id="get-html-btn">Get HTML</button>-->
+<!--    </div>-->
+    <form action="" method="post">
+        <div class="title-box">
+            <input class="title" name="title">
+            <select id="type">
+            </select>
+        </div>
+        <div class="editormd" id="test-editormd">
+            <textarea>### Hello world!</textarea>
+        </div>
+        <br/><div id="submit" class="btn">提交</div>
+    </form>
+</div>
+<footer>
+    <div class="box-wid foot-box">
+        <div class="qq-box">
+            <img src="static//imgs/qq.jpg">
+            <span>QQ</span>
+        </div>
+        <div class="wechat-box">
+            <img src="static//imgs/wechat.jpg">
+            <span>微信</span>
+        </div>
+        <div class="foot-mes">
+            <h5>本站声明</h5>
+            <div>本站由作者一手创建，可以转载需注明出处，不可用作商用，违法必究</div>
+        </div>
+    </div>
+</footer>
+<script src="static/lib/editormd/examples/js/zepto.min.js"></script>
+<script src="static/lib/editormd/editormd.js"></script>
+<script type="text/javascript">
+
+    // 初始化类型
+    var url = window.location.protocol+'//'+window.location.hostname+
+        ':'+window.location.port+'/'+window.location.pathname.split('/')[1]+'/';
+    $.ajax({
+        url: url + "blog/getAllColumn",
+        type: "get",
+        dataType: "json",
+        contentType: 'application/json;charset=utf-8',
+        success: function (data) {
+            $.each(data,function (index,obj) {
+                $("#type").append(
+                    "<option value=\""+obj.value+"\">"+obj.value+"</option>"
+                )
+            });
+        }
+    });
+
+
+    var testEditor;
+    var jQuery = Zepto;  // 为了避免修改 flowChart.js 和 sequence-diagram.js 的源码，所以想支持 flowChart / sequenceDiagram 就得加上这一句
+
+    $(function() {
+        $.get("static/lib/editormd/examples/test.md", function(md){
+            testEditor = editormd("test-editormd", {
+                width  : "90%",
+                height : 720,
+                path   : 'static/lib/editormd/lib/',
+                markdown : md,
+                codeFold : true,
+                searchReplace : true,
+                saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+                //watch : false,
+                htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+                emoji : true,
+                taskList : true,
+                tocm            : true,         // Using [TOCM]
+                tex : true,                     // 开启科学公式 TeX 语言支持，默认关闭
+                //previewCodeHighlight : false,  // 关闭预览窗口的代码高亮，默认开启
+                flowChart : true,
+                sequenceDiagram : true,         // 同上
+                onload : function() {
+                    console.log("onload =>", this, this.id, this.settings);
+                }
+            });
+        });
+
+        $("#get-md-btn").bind('click', function(){
+            alert(testEditor.getMarkdown());
+            var array = $(".markdown-body>*");
+            var text = "";
+            for (let i = 0; i < array.length; i++) {
+                text += array.eq(i).text();
+            }
+            $(".foot-mes").html(text);
+        });
+
+        $("#get-html-btn").bind('click', function() {
+            alert(testEditor.getHTML());
+            console.log(testEditor.getHTML());
+            $("header").append(testEditor.getHTML());
+        });
+        // 得到markdown
+        // testEditor.getMarkdown();
+        // // 得到 html
+        // testEditor.getHTML();
+        // 得到正常文本
+        function $text() {
+            var array = $(".markdown-body>*");
+            var text = "";
+            for (let i = 0; i < array.length; i++) {
+                text += array.eq(i).text();
+            }
+            return text;
+        }
+
+        var url = window.location.protocol+'//'+window.location.hostname+
+            ':'+window.location.port+'/'+window.location.pathname.split('/')[1]+'/';
+
+        $("#submit").click(function () {
+            $.ajax({
+                url:url+"blog/addBlog",
+                method:"post",
+                type: "post",
+                contentType:'application/json;charset=utf-8',
+                dataType:"text",
+                data:JSON.stringify({
+                    type:$("#type").val(),
+                    title:$(".title").val(),
+                    text:$text(),
+                    text_mark:testEditor.getMarkdown(),
+                    text_html:testEditor.getHTML()
+                }),
+                success:function () {
+                    alert("发表成功");
+                    window.location.href = url+"index";
+                },
+                error:function () {
+                    alert("失败，请稍后重试");
+                }
+            })
+        })
+
+    });
+</script>
+</body>
+</html>

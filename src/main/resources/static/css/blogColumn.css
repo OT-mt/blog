@@ -1,0 +1,123 @@
+.box{
+    min-height: 600px;
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+h5{
+    margin:0;
+}
+.nav-link{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+.nav-link:hover{
+    color: #fff;
+    background-color: #ff4100;
+}
+.nav .active{
+    color: #fff;
+    background-color: #ff4100 !important;
+}
+.blog{
+    padding: 10px 22px 5px 22px;
+    border-bottom: 1px solid #e3e1e1;
+    cursor: pointer;
+    position: relative;
+}
+.title{
+    font-weight: bold;
+    font-size: 22px;
+    color:black !important;
+}
+.text{
+    color: gray;
+    height: 50px;
+}
+.title,.text{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mes{
+    font-size: 15px;
+    color: gray;
+    font-weight: lighter;
+}
+.mes>div{
+    display: inline-block;
+}
+.img-box>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.view{
+    float: right;
+    margin-right: 40px;
+}
+.view-icon{
+    height: 10px;
+    vertical-align: 1px;
+}
+.pages-whole{
+    width: 100%;
+}
+.pages-whole>div{
+    float: left;
+}
+.page{
+    min-width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    background: #d7d7d7;
+    margin: 5px 5px;
+    color: #6e6e82 !important;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.active-page{
+    background: #ff4100;
+    color: #fff!important;
+}
+.current{
+    max-width: 620px;
+    height: 45px;
+    overflow: hidden;
+}
+.blogs{
+    min-height: 500px;
+    overflow: auto;
+    margin-bottom: 40px;
+}
+.pager{
+    position: absolute;
+    bottom: -40px;
+    margin: 0;
+    margin-bottom:40px!important;
+}
+.text>*{
+    display: none;
+}
+.blog:hover>.admin{
+    display: block;
+}
+.admin{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 0;
+    display: none;
+}
+.admin>div{
+    background: #00d5f8;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    margin-bottom: 2px;
+}

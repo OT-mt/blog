@@ -1,0 +1,54 @@
+#gif1{
+    position: absolute;
+    top: -15px;
+    left: -30px;
+    z-index: -1;
+    width: 340px;
+    height: auto;
+}
+.box{
+    margin: 50px auto;
+    position: relative;
+    width: 1000px;
+    min-height: 800px;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 20px 20px 20px 160px;
+}
+.box>div{
+    position: relative;
+    width: 100%;
+}
+#mes-title{
+    position: absolute;
+    top: 0px;
+    left: -135px;
+    width: 110px;
+}
+#chat{
+    border-radius: 5px;
+    box-shadow: #9fcdff 0 0 20px 0;
+    overflow: auto;
+}
+#chat>*{
+    float: left;
+}
+#user-list{
+    width: 20%;
+    height: 500px;
+    position: relative;
+}
+.user{
+    width: 100%;
+    height: 35px;
+    background: #ffedfc;
+    border-radius: 1px;
+}
+#sent-mes{
+    width: 80%;
+    height: 400px;
+}
+#unSent-mes{
+    width: 80%;
+    height: 100px;
+}

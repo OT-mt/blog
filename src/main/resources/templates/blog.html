@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>博客</title>
+
+    <link rel="stylesheet" th:href="@{/static/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/static/css/foot.css}"/>
+    <link rel="stylesheet" th:href="@{/static/css/blog.css}"/>
+    <link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/static/lib/editormd/examples/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/static/lib/editormd//css/editormd.preview.css}" />
+
+    <script th:src="@{/static/js/jquery.js}"></script>
+    <script th:src="@{/static/js/blog.js}"></script>
+    <script th:src="@{/static/bootstrap/js/bootstrap.js}"></script>
+</head>
+<body>
+<a id="id" style="display: none" th:text="${blog.id}"></a>
+    <header></header>
+    <div class="box-wid box">
+        <div class="nav">
+            <span>博客></span><a th:text="${blog.type}"></a><span>></span><a th:text="${blog.title}"></a>
+        </div>
+        <div class="text">
+            <h1 id="title" th:text="${blog.title}">我是标题</h1>
+            <div id="value" th:text="${blog.text_mark}" style="display: none">
+            </div>
+            <div id="layout">
+                <div id="test-editormd-view">
+                    <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>
+                </div>
+                <div id="test-editormd-view2">
+                <textarea id="append-test" style="display:none;">
+            </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="comment">
+
+        </div>
+        <div id="getComment">点击加载评论</div>
+        <div class="input-group mb-3">
+            <input type="text" id="comment" class="form-control" placeholder="输入评论..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append" id="commit-comment">
+                <span class="input-group-text" id="basic-addon2" style="cursor: pointer">提交评论</span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="box-wid foot-box">
+            <div class="qq-box">
+                <img th:src="@{/static/imgs/qq.jpg}">
+                <span>QQ</span>
+            </div>
+            <div class="wechat-box">
+                <img th:src="@{/static/imgs/wechat.jpg}">
+                <span>微信</span>
+            </div>
+            <div class="foot-mes">
+                <h5>本站声明</h5>
+                <div>本站由作者一手创建，可以转载需注明出处，不可用作商用，违法必究</div>
+            </div>
+        </div>
+    </footer>
+    <!-- 插件所需文件   -->
+    <script th:src="@{/static/lib/editormd/examples/js/jquery.min.js}"></script>
+    <script th:src="@{/static/lib/editormd/lib/marked.min.js}"></script>
+    <script th:src="@{/static/lib/editormd/lib/prettify.min.js}"></script>
+
+    <script th:src="@{/static/lib/editormd/lib/raphael.min.js}"></script>
+    <script th:src="@{/static/lib/editormd/lib/underscore.min.js}"></script>
+    <script th:src="@{/static/lib/editormd/lib/sequence-diagram.min.js}"></script>
+    <script th:src="@{/static/lib/editormd/lib/flowchart.min.js}"></script>
+    <script th:src="@{/static/lib/editormd/lib/jquery.flowchart.min.js}"></script>
+
+    <script th:src="@{/static/lib/editormd/editormd.js}"></script>
+    <script type="text/javascript">
+        $(function() {
+            function $add() {
+
+                var markdown = $("#value").text();
+                testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                    markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
+                    htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                    tocm            : true,    // Using [TOCM]
+                    emoji           : true,
+                    taskList        : true,
+                    tex             : true,  // 默认不解析
+                    flowChart       : true,  // 默认不解析
+                    sequenceDiagram : true,  // 默认不解析
+                });
+            }
+
+            $add();
+        });
+    </script>
+</body>
+</html>
